@@ -30,3 +30,26 @@ private:
         }
     }
 };
+
+class Solution {
+public:
+    vector<int> inorderTraversal(TreeNode* root) {
+        if (root == nullptr){return asw;}
+        stack<TreeNode*> s;
+        cur = root;
+        while(cur != nullptr || !s.empty()){
+            
+            while(cur != nullptr){
+                s.push_back(cur);
+                cur = cur->left;
+            }
+
+            cur = s.pop();
+            asw.push_back(cur->val);
+            cur = cur->right;
+        }
+        return asw;
+    }
+private:
+    vector<int> asw
+};
